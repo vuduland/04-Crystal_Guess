@@ -19,20 +19,20 @@ var game = {
 
 
     // functions:
-  var buttonTime = function() {
-    $('')
-    }
+//   var buttonTime = function() {
+//     $('')
+//     }
 
 
 
 
         // $('.body').css('background-image', 'url(' + 'assets\images\Linden-Gledhill_06.jpg' + ')');
     }
-function activate() {
-    $(
-    }
+// function activate() {
+//     $(
+//     }
 
-activate();
+// activate();
 // function activate() {
 //     $("#button4").$("#appendThis").appendTo("#appendToThis"); (function () {
 //         $(".button").jq
