@@ -27,7 +27,7 @@ var game = {
 
 
         // $('.body').css('background-image', 'url(' + 'assets\images\Linden-Gledhill_06.jpg' + ')');
-    }
+    };
 // function activate() {
 //     $(
 //     }
@@ -80,5 +80,5 @@ var game = {
 
 
 
-setBackground();
-}
+
+
