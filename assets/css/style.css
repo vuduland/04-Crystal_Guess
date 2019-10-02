@@ -1,22 +1,25 @@
 body{
+	background-color: rgb(20, 136, 182);
 	background-image: url("../images/Linden-Gledhill_06.jpg");
 	background-repeat: no-repeat !important;
 	background-size: cover !important;
 	background-position: center;
+	background-blend-mode: exclusion;
+	margin: auto;
 	font-size: 17px;
 	font-family: arial;
-    line-height: 1.5em;
+  line-height: 1.5em;
 }
 .jumbotron {
-  
-  background-repeat: no-repeat !important;
-  background-size: cover !important;
-  background-position: center;
+	background-color: black;
+	opacity: .7;
+	color: white;
+	margin: auto;
 }
 
 header{
 	background: #333;
-	color: #fff;
+	color: rgb(230, 152, 9);
 	padding: 20px;
 	text-align: center;
 	border-bottom: 4px #000 solid;
