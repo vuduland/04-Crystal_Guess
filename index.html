@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="assets\css\reset.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
-    <!-- <link rel="stylesheet" type="text/css" href="assets\css\reset.css">     -->
     <link rel="stylesheet" type="text/css" href="assets\css\style.css">
     <title>CRYSTAL.method</title>
 </head>
@@ -60,49 +60,35 @@
 
 
             <div class="d-flex row">
-                
+
                 <!--1-->
-                <div class="d-flex card image full col-3" height="d-flex full">
-                    <button id="buttonOne"><img src="assets/images/Gledhill_002.gif" id="imgOne" class="card-img-top"
-                            alt="DNA crystalizing "></button>
+                <div class="d-flex card image full col-3" style="padding: 5px"> 
+                    <!--try to only animate gif on click-->
+                    <button id="buttonOne"><img src="assets/images/Gledhill_002.gif" id="imgOne" class="card-img"
+                        alt="DNA crystalizing "></button>
                 </div>
 
                 <!--2-->
-                <div class="d-flex card col-3" style="padding: 0px">
-                    <button id="button2">
-                        <img src="assets/images/maxresdefault - Copy (1).gif" id="imgTwo" class="card-img-top"
+                <div class="d-flex card col-3" style="padding: 5px">
+                    <button id="button2" class="#">
+                        <img src="assets/images/maxresdefault - Copy (1).gif" id="imgTwo" class="card-img"
                             alt="Crystal Pattern">
                     </button>
-                    <div class="card-body">
-                        <h5 class="card-title"></h5>
-                        <p class="card-text"></p>
-                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-                    </div>
                 </div>
 
                 <!--3-->
-                <div id="appendToThis" class="d-flex card col-3" style="padding: 0px">
+                <div id="appendToThis" class="d-flex card col-3" style="padding: 5px">
                     <button id="button3">
-                        <img src="assets/images/Gledhill_001.gif" id="imgThree" class="card-img-top"
+                        <img src="assets/images/Gledhill_001.gif" id="imgThree" class="card-img"
                             alt="DNA crystallizing">
                     </button>
-                    <div class="card-body">
-                        <h5 class="card-title"></h5>
-                        <p class="card-text"></p>
-                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-                    </div>
                 </div>
 
                 <!--4-->
-                <div id="appendThis" class="d-flex card col-3" style="padding: 0px">
+                <div id="appendThis" class="d-flex card col-3" style="padding: 5px">
                     <button id="button4">
-                        <img src="assets/images/tear-tim-reflex-on_3584784b.jpg" id="imgFour" class="card-img-top"
-                            alt="tear crystallized"></button>
-                    <div class="card-body">
-                        <h5 class="card-title"></h5>
-                        <p class="card-text"></p>
-                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-                    </div>
+                        <img src="assets\images\cave-of-crystals-mexico-small.jpg" id="imgFour" class="card-img"
+                            alt="cave of crystals in mexico"></button>
                 </div>
             </div>
         </div>

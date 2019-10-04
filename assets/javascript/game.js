@@ -1,49 +1,65 @@
 var game = {
-    //variables
-
-    randoNumber: null,
-    guessesLeft: 9,
     guessedNumbers: [],
     wins: 0,
     losses: 0,
     lossPlayAgain: "You've lost. Insert floppy disk to continue. Just kidding. Press Ok.",
     winPlayAgain: "You won! Press Ok to play again!",
-    elements: {
-        numRandom: document.getElementById("word-box"),
-        remainCount: document.getElementById("remain-box"),
-        winCount: document.getElementById("win-box"),
-        lossCount: document.getElementById("loss-box"),
-    }
+
+    numRandom: document.getElementById("#generatedNum"),
+    cumulativeNum: document.getElementById("#cumulativeNum"),
+    winCount: document.getElementById("win-box"),
+    lossCount: document.getElementById("loss-box"),
+};
+
+var min = 1;
+var max = 12;
+var maxTwo = 120;
+var minTwo = 19;
+function crystalNum(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive 
+}
+
+
+function generatedNum(minTwo, maxTwo) {
+    minTwo = Math.ceil(minTwo);
+    maxTwo = Math.floor(maxTwo);
+    return Math.floor(Math.random() * (maxTwo - minTwo + 1)) + minTwo; //The maximum is inclusive and the minimum is inclusive 
+}
+$(game.numRandom).text("hello");//these aren't working D: 
+$(game.numRandom).generatedNum(minTwo, maxTwo).append("hello");
+
+
+// function buttonNum() {
+//     for (var i = 0; i < 3; i++) {
+        
+        
+//     }
+// }
 
 
 
+console.log(crystalNum(min, max));
 
+console.log(generatedNum(minTwo, maxTwo));
+
+
+
+  //crystalNum: document.getElementById("#")
     // functions:
-//   var buttonTime = function() {
-//     $('')
-//     }
+    //   var buttonTime = function() {
+    //     $('')
+    //     }
 
 
 
 
-        // $('.body').css('background-image', 'url(' + 'assets\images\Linden-Gledhill_06.jpg' + ')');
-    };
-// function activate() {
-//     $(
-//     }
-
-// activate();
-// function activate() {
-//     $("#button4").$("#appendThis").appendTo("#appendToThis"); (function () {
-//         $(".button").jq
-//     })
-// };
 
 
 
 
-//selector manipulation:
-// $('').css.
+
 
 
 
