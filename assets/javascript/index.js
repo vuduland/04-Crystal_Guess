@@ -4,7 +4,7 @@ var game = {
     lossCount: 0,
     playAgain: "You've lost. Insert floppy disk to continue. Just kidding. Press Ok.",
     winPlayAgain: "You won! Press Ok to play again!",
-    randNum: 0,
+    randNum: $('#')
 },
 
 var min = 1;
