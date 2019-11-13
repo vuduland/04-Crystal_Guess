@@ -2,7 +2,7 @@ body{
 	background-color: rgb(20, 136, 182);
 	background-image: url("../images/Linden-Gledhill_06.jpg");
 	background-repeat: no-repeat !important;
-	background-size: cover !important;
+	background-size: auto !important;
 	background-position: center;
 	background-blend-mode: exclusion;
 	margin: auto;
@@ -15,6 +15,7 @@ body{
 	opacity: .7;
 	color: white;
 	margin: auto;
+	padding: auto;
 }
 
 header{
@@ -25,6 +26,27 @@ header{
 	border-bottom: 4px #000 solid;
 	margin-bottom: 10px;
 }
+
+@media (max-width: 960px) {
+	.row div .card-image {
+		align-content: space-between;
+	}
+}
+@media (max-width: 582px) {
+	.row div .card-image {
+		align-content: space-around;
+		max-width: 600px;
+		height: 327px;
+	}
+}
+@media (max-width: 568px) {
+	.row div .card-image {
+		align-content: space-between;
+		width: 500px;
+		height: 275px;
+	}
+}
+
 /* .jumbotron{
 	width: 90%;
 	margin: auto;
