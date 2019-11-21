@@ -1,0 +1,23 @@
+{
+  "name": "04-Crystal_Guess",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vuduland/04-Crystal_Guess.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vuduland/04-Crystal_Guess/issues"
+  },
+  "homepage": "https://github.com/vuduland/04-Crystal_Guess#readme",
+  "dependencies": {
+    "jquery": "^3.4.1"
+  }
+}

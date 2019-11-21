@@ -5,53 +5,36 @@ var game = {
     lossPlayAgain: "You've lost. Insert floppy disk to continue. Just kidding. Press Ok.",
     winPlayAgain: "You won! Press Ok to play again!",
 
-    numRandom: document.getElementById("#generatedNum"),
-    cumulativeNum: document.getElementById("#cumulativeNum"),
-    winCount: document.getElementById("win-box"),
-    lossCount: document.getElementById("loss-box"),
+    // numRandom: document.getElementById("#generatedNum"),
+    // cumulativeNum: document.getElementById("#cumulativeNum"),
+    // winCount: document.getElementById("win-box"),
+    // lossCount: document.getElementById("loss-box"),
 };
 
 var min = 1;
 var max = 12;
 var maxTwo = 120;
 var minTwo = 19;
-function crystalNum(min, max) {
+var crystalNum = function(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive 
+    return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive
 }
-
-
-function generatedNum(minTwo, maxTwo) {
-    minTwo = Math.ceil(minTwo);
-    maxTwo = Math.floor(maxTwo);
-    return Math.floor(Math.random() * (maxTwo - minTwo + 1)) + minTwo; //The maximum is inclusive and the minimum is inclusive 
-}
-$(game.numRandom).text("hello");//these aren't working D: 
-$(game.numRandom).generatedNum(minTwo, maxTwo).append("hello");
-
-
-// function buttonNum() {
-//     for (var i = 0; i < 3; i++) {
-        
-        
-//     }
-// }
-
-
-
 console.log(crystalNum(min, max));
 
+var generatedNum = function(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive
+}
 console.log(generatedNum(minTwo, maxTwo));
 
+$("#generatedNum").text(generatedNum(minTwo, maxTwo));
+$("#cumulativeNum").append(crystalNum(min, max));
+$("#wins").text(game.wins);//these aren't working D:
+$("#losses").text(game.losses).append("hello");
 
-
-  //crystalNum: document.getElementById("#")
-    // functions:
-    //   var buttonTime = function() {
-    //     $('')
-    //     }
-
+// function buttonNum() {
 
 
 
