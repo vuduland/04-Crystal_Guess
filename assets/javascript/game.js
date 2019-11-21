@@ -10,31 +10,40 @@ var game = {
     // winCount: document.getElementById("win-box"),
     // lossCount: document.getElementById("loss-box"),
 };
-
+var one, two, three, four = 0;
 var min = 1;
 var max = 12;
 var maxTwo = 120;
 var minTwo = 19;
-var crystalNum = function(min, max) {
+var crystalNum = function(min, max,) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive
 }
-console.log(crystalNum(min, max));
+// console.log(crystalNum(min, max));
 
 var generatedNum = function(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive
 }
-console.log(generatedNum(minTwo, maxTwo));
 
-$("#generatedNum").text(generatedNum(minTwo, maxTwo));
-$("#cumulativeNum").append(crystalNum(min, max));
-$("#wins").text(game.wins);//these aren't working D:
-$("#losses").text(game.losses).append("hello");
 
-// function buttonNum() {
+// console.log(generatedNum(minTwo, maxTwo));
+$("#generatedNum").append(generatedNum(minTwo, maxTwo));
+// $("#cumulativeNum").append(cumulativeNum(min, max));
+$("#wins").append(game.wins);//these aren't working D:
+$("#losses").append(game.losses);
+
+$("#buttonOne").click(function () {
+    one = $(crystalNum(min, max).value());
+    console.log(one);
+    two = crystalNum(min, max);
+    three = crystalNum(min, max);
+    four = cystalNum(min, max);
+    $(this).append(crystalNum(min, max));
+    // console.log(crystalNum(one + ", " + two + ", " + three + ", " + four));
+  });
 
 
 
