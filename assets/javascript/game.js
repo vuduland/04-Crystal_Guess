@@ -1,11 +1,22 @@
 var game = {
-  guessedNumbers: [],
+  crystals: [0, 0, 0, 0],
   wins: 0,
   losses: 0,
-  cumulativeNum: 0,
+  currentScore: 0,
 
   lossPlayAgain: "You've lost. Insert floppy disk to continue. Just kidding. Press Ok.",
-  winPlayAgain: "You won! Press Ok to play again!"
+  winPlayAgain: 'You won! Press Ok to play again!',
+
+  // methods
+  cumulativeNum: function (crystal) {
+    currentScore += crystal;
+    return this.currentScore;
+  },
+  generatedNum: function (min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
 };
 
 var min = 1;
@@ -13,55 +24,49 @@ var max = 12;
 var maxTwo = 120;
 var minTwo = 19;
 
-var crystalNum = function (min, max, ) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive
-}
-
-var generatedNum = function (min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive
-}
+// var generatedNum = function (min, max) {
+//   min = Math.ceil(min);
+//   max = Math.floor(max);
+//   return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive
+// }
 
 // append functions
-$("#generatedNum").append(generatedNum(minTwo, maxTwo)),
-  $("#wins").append(game.wins),
-  $("#losses").append(game.losses),
-  $("#cumulativeNum").append(game.cumulativeNum);
+$('#generatedNum').append(game.generatedNum(minTwo, maxTwo)),
+  $('#wins').append(game.wins),
+  $('#losses').append(game.losses),
+  $('#cumulativeNum').append(game.cumulativeNum);
 
 // on-click button functions
-$("#button1").click(function () {
-  game.cumulativeNum += game.guessedNumbers[0];
-  console.log(game.cumulativeNum + " button1");
-  $("#cumulativeNum").html("Your number: " + game.cumulativeNum);
+$('#button1').click(function () {
+  game.cumulativeNum += game.crystals[0];
+  console.log(game.cumulativeNum + ' button1');
+  $('#cumulativeNum').html('Your number: ' + game.cumulativeNum);
 }),
-  $("#button2").click(function () {
-    game.cumulativeNum += game.guessedNumbers[1];
-    console.log(game.cumulativeNum + " button2");
-    $("#cumulativeNum").html("Your number: " + game.cumulativeNum);
+  $('#button2').click(function () {
+    game.cumulativeNum += game.crystals[1];
+    console.log(game.cumulativeNum + ' button2');
+    $('#cumulativeNum').html('Your number: ' + game.cumulativeNum);
 
   }),
-  $("#button3").click(function () {
-    game.cumulativeNum += game.guessedNumbers[2];
-    console.log(game.cumulativeNum + " button3");
-    $("#cumulativeNum").html("Your number: " + game.cumulativeNum);
+  $('#button3').click(function () {
+    game.cumulativeNum += game.crystals[2];
+    console.log(game.cumulativeNum + ' button3');
+    $('#cumulativeNum').html('Your number: ' + game.cumulativeNum);
 
   }),
-  $("#button4").click(function () {
-    game.cumulativeNum += game.guessedNumbers[3];
-    console.log(game.cumulativeNum + " button4");
-    $("#cumulativeNum").html("Your number: " + game.cumulativeNum);
+  $('#button4').click(function () {
+    game.cumulativeNum += game.crystals[3];
+    console.log(game.cumulativeNum + ' button4');
+    $('#cumulativeNum').html('Your number: ' + game.cumulativeNum);
   }),
 
   // on-click start button
-  $("#getStarted").click(function () {
+  $('#getStarted').click(function () {
     for (let i = 0; i < 4; i++) {
-      var num = crystalNum(min, max);
-      if (!game.guessedNumbers.includes(num)) {
-        game.guessedNumbers.push(num);
-        console.log(game.guessedNumbers + " first log");
+      var num = game.generatedNum(min, max);
+      if (game.crystals.includes(num)) {
+        game.crystals.push(num);
+        console.log(game.crystals + ' first log');
       }
     };
   },
