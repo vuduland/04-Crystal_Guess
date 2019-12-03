@@ -1,68 +1,73 @@
 var game = {
-    guessedNumbers: [],
-    wins: 0,
-    losses: 0,
-    lossPlayAgain: "You've lost. Insert floppy disk to continue. Just kidding. Press Ok.",
-    winPlayAgain: "You won! Press Ok to play again!",
+  guessedNumbers: [],
+  wins: 0,
+  losses: 0,
+  cumulativeNum: 0,
 
-    numRandom: document.getElementById("#generatedNum"),
-    cumulativeNum: document.getElementById("#cumulativeNum"),
-    winCount: document.getElementById("win-box"),
-    lossCount: document.getElementById("loss-box"),
+  lossPlayAgain: "You've lost. Insert floppy disk to continue. Just kidding. Press Ok.",
+  winPlayAgain: "You won! Press Ok to play again!"
 };
 
 var min = 1;
 var max = 12;
 var maxTwo = 120;
 var minTwo = 19;
-function crystalNum(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive 
+
+var crystalNum = function (min, max, ) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive
 }
 
-
-function generatedNum(minTwo, maxTwo) {
-    minTwo = Math.ceil(minTwo);
-    maxTwo = Math.floor(maxTwo);
-    return Math.floor(Math.random() * (maxTwo - minTwo + 1)) + minTwo; //The maximum is inclusive and the minimum is inclusive 
+var generatedNum = function (min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive
 }
-$(game.numRandom).text("hello");//these aren't working D: 
-$(game.numRandom).generatedNum(minTwo, maxTwo).append("hello");
 
+// append functions
+$("#generatedNum").append(generatedNum(minTwo, maxTwo)),
+  $("#wins").append(game.wins),
+  $("#losses").append(game.losses),
+  $("#cumulativeNum").append(game.cumulativeNum);
 
-// function buttonNum() {
-//     for (var i = 0; i < 3; i++) {
-        
-        
-//     }
-// }
+// on-click button functions
+$("#button1").click(function () {
+  game.cumulativeNum += game.guessedNumbers[0];
+  console.log(game.cumulativeNum + " button1");
+  $("#cumulativeNum").html("Your number: " + game.cumulativeNum);
+}),
+  $("#button2").click(function () {
+    game.cumulativeNum += game.guessedNumbers[1];
+    console.log(game.cumulativeNum + " button2");
+    $("#cumulativeNum").html("Your number: " + game.cumulativeNum);
 
+  }),
+  $("#button3").click(function () {
+    game.cumulativeNum += game.guessedNumbers[2];
+    console.log(game.cumulativeNum + " button3");
+    $("#cumulativeNum").html("Your number: " + game.cumulativeNum);
 
+  }),
+  $("#button4").click(function () {
+    game.cumulativeNum += game.guessedNumbers[3];
+    console.log(game.cumulativeNum + " button4");
+    $("#cumulativeNum").html("Your number: " + game.cumulativeNum);
+  }),
 
-console.log(crystalNum(min, max));
+  // on-click start button
+  $("#getStarted").click(function () {
+    for (let i = 0; i < 4; i++) {
+      var num = crystalNum(min, max);
+      if (!game.guessedNumbers.includes(num)) {
+        game.guessedNumbers.push(num);
+        console.log(game.guessedNumbers + " first log");
+      }
+    };
+  },
+  )
 
-console.log(generatedNum(minTwo, maxTwo));
-
-
-
-  //crystalNum: document.getElementById("#")
-    // functions:
-    //   var buttonTime = function() {
-    //     $('')
-    //     }
-
-
-
-
-
-
-
-
-
-
-
-
+/*
 //     3. Here's how the app works:
 
 //         * There will be four crystals displayed as buttons on the page. done
@@ -84,17 +89,9 @@ console.log(generatedNum(minTwo, maxTwo));
 
 //         * The app should show the number of games the player wins and loses.To that end, do not refresh the page as a means to restart the game.
 
-// ##### Option 1 Game design notes
+4// ##### Option 1 Game design notes
 
 //     * The random number shown at the start of the game should be between 19 - 120.
 
-//         * Each crystal should have a random hidden value between 1 - 12.
-
-
-
-
-
-
-
-
-
+//         * Each crystal should have a random hidden value between 12
+*/
