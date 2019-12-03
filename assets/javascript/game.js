@@ -1,76 +1,78 @@
 var game = {
   crystals: [0, 0, 0, 0],
+  crysParams: [1, 12],
+  targetParams: [19, 120],
   wins: 0,
   losses: 0,
   currentScore: 0,
-
+  crystal: [{ value: 0 }, { value: 0 }, { value: 0 }, { value: 0 }],
   lossPlayAgain: "You've lost. Insert floppy disk to continue. Just kidding. Press Ok.",
   winPlayAgain: 'You won! Press Ok to play again!',
 
   // methods
-  cumulativeNum: function (crystal) {
-    currentScore += crystal;
+  cumulativeNum: function (crystalsIndex) {
+    this.currentScore += crystalsIndex;
     return this.currentScore;
   },
   generatedNum: function (min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
+  },
+  updateGame: function () { //add params?
+    $('#generatedNum').append(this.generatedNum(this.targetParams[0], this.targetParams[1])),
+      $('#wins').append(this.wins),
+      $('#losses').append(this.losses),
+      $('#cumulativeNum').append(this.cumulativeNum);
+    for (let i = 0; i <= 3; i++) {
+      this.crystal[i].value = game.generatedNum(this.crysParams[0], this.crysParams[1]);
+
+    }
+    console.log(this.crystal);
+
+  },
+
 };
+game.updateGame();
 
-var min = 1;
-var max = 12;
-var maxTwo = 120;
-var minTwo = 19;
-
-// var generatedNum = function (min, max) {
-//   min = Math.ceil(min);
-//   max = Math.floor(max);
-//   return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive
-// }
-
-// append functions
-$('#generatedNum').append(game.generatedNum(minTwo, maxTwo)),
-  $('#wins').append(game.wins),
-  $('#losses').append(game.losses),
-  $('#cumulativeNum').append(game.cumulativeNum);
-
-// on-click button functions
 $('#button1').click(function () {
-  game.cumulativeNum += game.crystals[0];
-  console.log(game.cumulativeNum + ' button1');
-  $('#cumulativeNum').html('Your number: ' + game.cumulativeNum);
+  game.currentScore += game.crystal[0].value;
+  console.log(game.currentScore + ' currentScore');
+  console.log(game.crystal[0].value + ' button1');
+  $('#cumulativeNum').html('Your number: ' + game.currentScore);
 }),
   $('#button2').click(function () {
-    game.cumulativeNum += game.crystals[1];
-    console.log(game.cumulativeNum + ' button2');
-    $('#cumulativeNum').html('Your number: ' + game.cumulativeNum);
-
+    game.currentScore += game.crystal[1].value;
+    console.log(game.currentScore + ' currentScore');
+    console.log(game.crystal[1].value + ' button2');
+    $('#cumulativeNum').html('Your number: ' + game.currentScore);
   }),
   $('#button3').click(function () {
-    game.cumulativeNum += game.crystals[2];
-    console.log(game.cumulativeNum + ' button3');
-    $('#cumulativeNum').html('Your number: ' + game.cumulativeNum);
-
+    game.currentScore += game.crystal[2].value;
+    console.log(game.currentScore + ' currentScore');
+    console.log(game.crystal[2].value + ' button3');
+    $('#cumulativeNum').html('Your number: ' + game.currentScore);
   }),
   $('#button4').click(function () {
-    game.cumulativeNum += game.crystals[3];
-    console.log(game.cumulativeNum + ' button4');
-    $('#cumulativeNum').html('Your number: ' + game.cumulativeNum);
-  }),
+    game.currentScore += game.crystal[3].value;
+    console.log(game.currentScore + ' currentScore');
+    console.log(game.crystal[3].value + ' button2');
+    $('#cumulativeNum').html('Your number: ' + game.currentScore);
+  })
+
+
 
   // on-click start button
-  $('#getStarted').click(function () {
-    for (let i = 0; i < 4; i++) {
-      var num = game.generatedNum(min, max);
-      if (game.crystals.includes(num)) {
-        game.crystals.push(num);
-        console.log(game.crystals + ' first log');
-      }
-    };
-  },
-  )
+  // $('#getStarted').click(function () {
+  //   for (let i = 0; i < 4; i++) {
+  //     var num = game.generatedNum(min, max);
+  //     if (game.crystals.includes(num)) {
+  //       game.crystals.push(num);
+  //       console.log(game.crystals + ' first log');
+  //     }
+  //   };
+  // },
+  // )
 
 /*
 //     3. Here's how the app works:
