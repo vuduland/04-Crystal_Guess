@@ -18,6 +18,6 @@
   },
   "homepage": "https://github.com/vuduland/04-Crystal_Guess#readme",
   "dependencies": {
-    "jquery": "^3.4.1"
+    "jquery": "^3.5.0"
   }
 }
